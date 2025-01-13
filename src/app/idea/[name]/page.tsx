@@ -10,7 +10,7 @@ export default function IdeaPage({ params }: { params: Promise<{ name: string }>
   const [copied, setCopied] = useState(false);
   const resolvedParams = use(params);
   
-  const ideas = loadIdeas();
+  const ideas: GPTIdea[] = loadIdeas();
   const idea = ideas.find(i => i.name === decodeURIComponent(resolvedParams.name));
 
   if (!idea) {
